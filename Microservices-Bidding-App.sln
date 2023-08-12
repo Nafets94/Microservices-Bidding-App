@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30A4C8BC-584
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{56AD63F3-A6C5-4650-99A8-E2F24B1A2BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchService", "src\SearchService\SearchService.csproj", "{37A80B50-12F8-4453-A51F-E5C72AD3EBFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchService", "src\SearchService\SearchService.csproj", "{37A80B50-12F8-4453-A51F-E5C72AD3EBFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "src\Contracts\Contracts.csproj", "{ED52BCE0-D7D6-4A5F-A82B-4EBE24E765DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\Contracts\Contracts.csproj", "{ED52BCE0-D7D6-4A5F-A82B-4EBE24E765DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{69A43B88-B18A-40FE-8316-99E888047440}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{69A43B88-B18A-40FE-8316-99E888047440}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

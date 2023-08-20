@@ -1,9 +1,10 @@
 import React from 'react'
 import CountdownTimer from './CountdownTimer'
 import CarImage from './CarImage'
+import { Auction } from '@/types'
 
 type Props = {
-    auction: any
+    auction: Auction
 }
 
 export default function AuctionCard({ auction }: Props) {
@@ -21,7 +22,6 @@ export default function AuctionCard({ auction }: Props) {
                 <h3 className='text-gray-700'>{auction.make} {auction.model}</h3>
                 <p className='font-semibold text-sm'>{auction.year}</p>
             </div>
-
         </a>
     )
 }

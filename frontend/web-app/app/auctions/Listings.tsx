@@ -7,8 +7,9 @@ import AppPagination from '@/app/components/AppPagination';
 import { getData } from '@/app/actions/auctionActions';
 import Filters from './Filters';
 import { useParamsStore } from '@/hooks/useParamsStore';
-import {shallow} from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 import qs from 'query-string';
+import EmptyFilter from '../components/EmptyFilter';
 
 export default function Listings() {
   const [data, setData] = useState<PagedResult<Auction>>();
@@ -20,10 +21,10 @@ export default function Listings() {
     filterBy: state.filterBy
   }), shallow);
   const setParams = useParamsStore(state => state.setParams);
-  const url = qs.stringifyUrl({url: '', query: params});
+  const url = qs.stringifyUrl({ url: '', query: params });
 
   function setPageNumber(pageNumber: number) {
-    setParams({pageNumber});
+    setParams({ pageNumber });
   }
 
   useEffect(() => {
@@ -37,18 +38,25 @@ export default function Listings() {
   return (
     <>
       <Filters />
-      <div className='grid grid-cols-4 gap-6'>
-        {data.result.map(auction => (
-          <AuctionCard key={auction.id} auction={auction} />
-        ))}
-      </div>
-      <div className='flex justify-center mt-4'>
-        <AppPagination
-          currentPage={params.pageNumber}
-          pageCount={data.pageCount}
-          pageChanged={setPageNumber}
-        />
-      </div>
+      {data.totalCount === 0 ? (
+        <EmptyFilter showReset />
+      ) : (
+        <>
+          <div className='grid grid-cols-4 gap-6'>
+            {data.result.map(auction => (
+              <AuctionCard key={auction.id} auction={auction} />
+            ))}
+          </div>
+          <div className='flex justify-center mt-4'>
+            <AppPagination
+              currentPage={params.pageNumber}
+              pageCount={data.pageCount}
+              pageChanged={setPageNumber}
+            />
+          </div>
+        </>
+      )}
+
     </>
   )
 }

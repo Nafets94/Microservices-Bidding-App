@@ -25,7 +25,7 @@ export default function UserActions({user}: Props) {
         </Link>
       </Dropdown.Item>
       <Dropdown.Item icon={AiFillTrophy}>
-        <Link href='/'>
+        <Link href='/auctions/create'>
             Auctions won
         </Link>
       </Dropdown.Item>
